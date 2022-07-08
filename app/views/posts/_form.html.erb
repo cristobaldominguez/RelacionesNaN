@@ -26,6 +26,15 @@
     <%= form.text_field :author %>
   </div>
 
+  <div class="field">
+    <%= form.label :tags %>
+    <%= form.collection_check_boxes :tag_ids, @tags, :id, :name do |cb| %>
+      <%= cb.label class: 'label-checkbox' do %>
+        <%= cb.check_box + cb.text %>
+      <% end %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
